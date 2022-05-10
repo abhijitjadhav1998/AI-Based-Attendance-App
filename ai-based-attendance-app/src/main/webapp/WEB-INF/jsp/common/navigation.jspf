@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="#"><b>AI Based Attendance System</b></a>
+		<a class="navbar-brand" href="/"><b>AI Based Attendance System</b></a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -26,10 +26,13 @@
 					tabindex="-1" aria-disabled="true">Disabled</a></li>
 			</ul>
 			<form class="d-flex">
-				<button class="btn btn-outline-primary" type="button">Admin
-					Login</button>&nbsp;&nbsp;&nbsp;
-				<button class="btn btn-outline-success" type="button">Employee
-					Login</button>
+				<button class="btn btn-outline-primary" type="button">
+					<a href="/login">Login </a>
+				</button>
+				&nbsp;&nbsp;&nbsp;
+				<button class="btn btn-outline-success" type="button">
+					<a href="/registration">Register </a>
+				</button>
 
 			</form>
 		</div>
