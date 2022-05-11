@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.abhijit.aibasedattendanceapp.service.UserService;
@@ -19,6 +20,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	AuthenticationSuccessHandler loginSuccessHandler;
 	
 	@Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -53,7 +57,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		.formLogin().usernameParameter("userName").passwordParameter("password")
 		.loginPage("/login")
 		.loginProcessingUrl("/login")
-		.defaultSuccessUrl("/dashboard")
+		.successHandler(loginSuccessHandler)
 		.permitAll()
 		.and()
 		.logout()

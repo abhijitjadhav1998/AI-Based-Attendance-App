@@ -26,56 +26,14 @@ public class LoginController {
 		return mv;
 	}
 
-	
-	
-//	@RequestMapping(value = "/postLogin", method = RequestMethod.POST)
-//    public String postLogin(Model model, HttpSession session) {
-//        log.info("postLogin()");
-//
-//        // read principal out of security context and set it to session
-//        UsernamePasswordAuthenticationToken authentication = (UsernamePasswordAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
-//        validatePrinciple(authentication.getPrincipal());
-//        User loggedInUser = ((PdfUserDetails) authentication.getPrincipal()).getUserDetails();
-//
-//        model.addAttribute("currentUser", loggedInUser.getUsername());
-//        session.setAttribute("userId", loggedInUser.getId());
-//        return "redirect:/wallPage";
-//    }
-//	
-
-	@RequestMapping(value = "processLogin", method = RequestMethod.POST)
-	public ModelAndView processLogin(@ModelAttribute("user") User user, HttpSession session) {
-		ModelAndView mv = null;
-		System.out.println(user);
-		boolean status = loginService.validateLogin(user);
-		if (status) {
-			mv = new ModelAndView("dashboard", "user", user);
-			mv.addObject("userName", user.getUserName());
-		//	HttpSession session = request.getSession();
-			session.setAttribute("username", user.getUserName());
-		} else {
-			String message = "";
-			mv = new ModelAndView("error", "user", user);
-
-			if(user.getUserName() == "" ) {
-				message += "User Name is Mandatory ||||";
-			}
-			if(user.getPassword() == "") {
-				message += "  Password is Mandatory ||||";
-			}
-			if(loginService.getUserByUsername(user.getUserName())) {
-				message += "   There is No such user in the system ||||";
-			}
-			message += "  Invalid UserName or Password";
-			mv.addObject("message", message);
-		}
-		return mv;
+	@RequestMapping("/userDashboard")
+	public ModelAndView userDashboard() {
+		return new ModelAndView("userdashboard");
 	}
-	@RequestMapping(value = "dashboard", method = RequestMethod.GET)
-	public ModelAndView showDashboard() {
-		
-		ModelAndView mv = new ModelAndView("todo");
-		return mv;
+
+	@RequestMapping("/adminDashboard")
+	public ModelAndView adminDashboard() {
+		return new ModelAndView("admindashboard");
 	}
 
 }
