@@ -45,24 +45,25 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	                "/js/**",
 	                "/css/**",
 	                "/jsp/**",
-	                "/img/**",
+	                "/images/**",
 	                "/",
 	                "/webjars/**").permitAll()
 		.anyRequest().authenticated()
 		.and()
-		.formLogin()
+		.formLogin().usernameParameter("userName").passwordParameter("password")
 		.loginPage("/login")
+		.loginProcessingUrl("/login")
+		.defaultSuccessUrl("/dashboard")
 		.permitAll()
 		.and()
 		.logout()
 		.invalidateHttpSession(true)
 		.clearAuthentication(true)
 		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-		.logoutSuccessUrl("/login?logout")
+		.logoutSuccessUrl("/")
 		.permitAll();
 		
 		http.csrf().disable();
-        http.headers().frameOptions().disable();
 	}
 
 }

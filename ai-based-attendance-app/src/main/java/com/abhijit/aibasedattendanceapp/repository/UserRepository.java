@@ -7,7 +7,5 @@ import com.abhijit.aibasedattendanceapp.entity.User;
 
 
 public interface UserRepository extends JpaRepository<User, Long> {
-
 	User findByUserName(String username);
-
 }

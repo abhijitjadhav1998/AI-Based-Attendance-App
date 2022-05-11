@@ -3,7 +3,7 @@
 <%@ include file="common/header.jspf"%>
 <%@ include file="common/navigation.jspf"%>
 
-<form:form action="processLogin" method="post" modelAttribute="user">
+<form:form action="/login" method="post" modelAttribute="user">
 	<div class="mb-3">
 		<label>User Name</label>
 		<form:input path="userName" class="form-control" />

@@ -10,22 +10,22 @@
 	color: white;
 }
 
-#links a:link {
+a:link {
 	text-decoration: none;
 	color: inherit;
 }
 
-#links a:hover {
+a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+a:focus {
 	text-decoration: none;
 	color: inherit;
 }
 
-#links a:focus {
-	text-decoration: none;
-	color: inherit;
-}
-
-#links a:active {
+a:active {
 	text-decoration: none;
 	color: inherit;
 }

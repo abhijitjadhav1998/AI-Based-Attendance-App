@@ -5,7 +5,7 @@
 <script src="js/custom.js"></script>
 <footer class="footer">
 	<span >All rights reserved © 2022
-		<a id="links" href="https://github.com/abhijitjadhav1998">Abhijit Jadhav</a> </span>
+		<a id="links" href="https://github.com/abhijitjadhav1998" style="text-decoration: none !important">Abhijit Jadhav</a> </span>
 	<p id="targetDate"></p>
 </footer>
 
