@@ -23,7 +23,7 @@
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							Manage Employee </a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">Add New Employee</a></li>
+							<li><a class="dropdown-item" href="/addemployee">Add New Employee</a></li>
 							<li><a class="dropdown-item" href="#">Display All
 									employee</a></li>
 						</ul></li>

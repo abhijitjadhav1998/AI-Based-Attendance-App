@@ -47,4 +47,12 @@ public class Employee {
 		this.employeeName = employeeName;
 	}
 
+	public List<Photo> getPhotoId() {
+		return photoId;
+	}
+
+	public void setPhotoId(List<Photo> photoId) {
+		this.photoId = photoId;
+	}
+
 }
